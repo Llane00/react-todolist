@@ -1,0 +1,36 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .1rem 0;
+  height: .44rem;
+  border-bottom: 1px solid #eee;
+
+  .check-box {
+    display: flex;
+    align-items: center;
+    margin: 0 .14rem;
+    height: .44rem;
+
+    input {
+      margin: 0;
+    }
+  }
+  .content {
+    flex: 1;
+    line-height: .44rem;
+    font-size: .18rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .btn-group {
+    display: flex;
+    align-items: center;
+    height: .44rem;
+
+    button {
+      margin-right: .08rem;
+    }
+  }
+}
