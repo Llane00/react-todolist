@@ -1,6 +1,7 @@
 function _addZero(value) {
   return value < 10 ? ('0' + value) : value;
 }
+
 function formatDateTime(timeStamp) {
   const date = new Date(timeStamp)
 
