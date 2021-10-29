@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Modal } from "../"
+import { formatDateTime } from "../../../libs/utils"
 import "./index.scss"
 
 export const CheckModal = (props) => {
@@ -11,7 +12,7 @@ export const CheckModal = (props) => {
       modalVisible={checkModalVisible}
       modalTitle="查看事件"
     >
-      <p className="topic">时间：{data.id}</p>
+      <p className="topic">时间：{formatDateTime(data.id)}</p>
       <p className="topic">内容：{data.content}</p>
       <p className="topic">状态：{data.complete ? "完成" : "未完成"}</p>
       <button

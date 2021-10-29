@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 
 import { Modal } from '../';
+import { formatDateTime } from '../../../libs/utils';
 import "./index.scss"
 
 export const EditModal = (props) => {
@@ -31,7 +32,7 @@ export const EditModal = (props) => {
       modalVisible={editModalVisible}
       modalTitle="编辑事件"
     >
-      <p className="topic">时间：{data.id}</p>
+      <p className="topic">时间：{formatDateTime(data.id)}</p>
       <textarea
         ref={inputRef}
         defaultValue={data.content}
