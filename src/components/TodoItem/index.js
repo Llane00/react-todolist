@@ -2,7 +2,7 @@ import React from 'react'
 import "./index.scss"
 
 export const TodoItem = (props) => {
-  const { data, openCheckModal, openEditModal } = props;
+  const { data, openCheckModal, openEditModal, completeItem } = props;
 
   return (
     <li className="todo-item">
@@ -10,6 +10,7 @@ export const TodoItem = (props) => {
         <input
           type="checkbox"
           checked={data.completed}
+          onChange={() => completeItem(data.id)}
         />
       </div>
       <span

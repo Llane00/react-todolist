@@ -44,10 +44,8 @@ function App() {
   }, [])
 
   const openEditModal = useCallback((id) => {
-    console.log(id)
     setCurrentItemData(todoList.filter((item) => item.id === id)[0])
     setEditModalVisible(true)
-    console.log(currentItemData, editModalVisible)
   }, [todoList])
 
   const submitData = useCallback((newData, id) => {
@@ -60,6 +58,17 @@ function App() {
       })
     )
     setEditModalVisible(false)
+  }, [])
+
+  const completeItem = useCallback((id) => {
+    setTodoList((todoList) =>
+      todoList.map((item) => {
+        if (item.id === id) {
+          item.completed = !item.completed
+        }
+        return item;
+      })
+    )
   }, [])
 
   return (
@@ -85,6 +94,7 @@ function App() {
               key={item.id}
               openCheckModal={openCheckModal}
               openEditModal={openEditModal}
+              completeItem={completeItem}
             />
           )
         }

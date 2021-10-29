@@ -14,7 +14,7 @@ export const CheckModal = (props) => {
     >
       <p className="topic">时间：{formatDateTime(data.id)}</p>
       <p className="topic">内容：{data.content}</p>
-      <p className="topic">状态：{data.complete ? "完成" : "未完成"}</p>
+      <p className="topic">状态：{data.completed ? "完成" : "未完成"}</p>
       <button
         className="btn btn-primary confirm-btn"
         onClick={closeCheckModal} 
