@@ -71,6 +71,10 @@ function App() {
     )
   }, [])
 
+  const removeItem = useCallback((id) => {
+    setTodoList((todoList) => todoList.filter((item) => item.id !== id))
+  }, [])
+
   return (
     <div className="App">
       <CheckModal
@@ -95,6 +99,7 @@ function App() {
               openCheckModal={openCheckModal}
               openEditModal={openEditModal}
               completeItem={completeItem}
+              removeItem={removeItem}
             />
           )
         }
