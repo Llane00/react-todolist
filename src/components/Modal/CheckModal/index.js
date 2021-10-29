@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Modal } from "../index"
+import { Modal } from "../"
 import "./index.scss"
 
 export const CheckModal = (props) => {
@@ -15,7 +15,7 @@ export const CheckModal = (props) => {
       <p className="topic">内容：{data.content}</p>
       <p className="topic">状态：{data.complete ? "完成" : "未完成"}</p>
       <button
-        className="btn btn-primary btn-confirm"
+        className="btn btn-primary confirm-btn"
         onClick={closeCheckModal} 
       >确定</button>
     </Modal>
