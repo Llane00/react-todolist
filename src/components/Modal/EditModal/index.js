@@ -20,7 +20,7 @@ export const EditModal = (props) => {
     const newData = {
       id: new Date().getTime(),
       content: val,
-      completed: checkRef.current.value
+      completed: checkRef.current.checked
     }
 
     submitData(newData, data.id);
@@ -42,7 +42,7 @@ export const EditModal = (props) => {
         <input
           ref={checkRef}
           type="checkbox"
-          defaultChecked={data.completed || false}
+          defaultChecked={data.completed? true : false}
         />
       </p>
       <button

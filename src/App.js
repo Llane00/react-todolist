@@ -50,7 +50,15 @@ function App() {
     console.log(currentItemData, editModalVisible)
   }, [todoList])
 
-  const submitData = useCallback(() => {
+  const submitData = useCallback((newData, id) => {
+    setTodoList((todoList) => 
+      todoList.map((item) => {
+        if (item.id === id) {
+          item = newData
+        }
+        return item;
+      })
+    )
     setEditModalVisible(false)
   }, [])
 
