@@ -5,6 +5,7 @@ import { Header as MyHeader } from './components/Header';
 import { TodoItem } from './components/TodoItem';
 import { CheckModal } from './components/Modal/CheckModal';
 import { EditModal } from './components/Modal/EditModal';
+import { NoDataTip } from './components/NoDataTip';
 
 function App() {
   const [inputVisible, setInputVisible] = useState(false)
@@ -89,21 +90,27 @@ function App() {
       />
       <MyHeader switchInputVisible={() => setInputVisible(!inputVisible)} />
       <AddInput inputVisible={inputVisible} addItem={addItem} />
-      <ul className="todo-list">
-        {
-          todoList &&
-          todoList.map((item) => 
-            <TodoItem
-              data={item}
-              key={item.id}
-              openCheckModal={openCheckModal}
-              openEditModal={openEditModal}
-              completeItem={completeItem}
-              removeItem={removeItem}
-            />
+      {
+        !todoList || todoList.length === 0 ?
+          (<NoDataTip />) :
+          (
+            <ul className="todo-list">
+              {
+                todoList &&
+                todoList.map((item) => 
+                  <TodoItem
+                    data={item}
+                    key={item.id}
+                    openCheckModal={openCheckModal}
+                    openEditModal={openEditModal}
+                    completeItem={completeItem}
+                    removeItem={removeItem}
+                  />
+                )
+              }
+            </ul>
           )
-        }
-      </ul>
+      }
     </div>
   );
 }
