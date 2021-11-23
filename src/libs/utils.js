@@ -7,7 +7,7 @@ function formatDateTime(timeStamp) {
 
   const y = date.getFullYear(),
     m = date.getMonth() + 1,
-    d = date.getDay(),
+    d = date.getDate(),
     h = _addZero(date.getHours()),
     M = _addZero(date.getMinutes()),
     s = _addZero(date.getSeconds());
